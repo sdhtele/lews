@@ -33,6 +33,7 @@ class _BotCommands:
         self.DeleteCommand = f'del{CMD_INDEX}'
         self.ShellCommand = f'shell{CMD_INDEX}'
         self.ExecHelpCommand = f'exechelp{CMD_INDEX}'
+        self.EvalCommand = f'eval{CMD_INDEX}'
         self.LeechSetCommand = f'leechset{CMD_INDEX}'
         self.SetThumbCommand = f'setthumb{CMD_INDEX}'
         self.LeechCommand = f'le1{CMD_INDEX}'
