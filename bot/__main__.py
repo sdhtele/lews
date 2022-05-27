@@ -67,7 +67,7 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-        buttons.buildbutton("WEB GATE", "https://sdyzxz.eu.org")
+    buttons.buildbutton("WEB GATE", "https://sdyzxz.eu.org")
     buttons.buildbutton("DONATE", "https://sociabuzz.com/sxrips/tribe")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
