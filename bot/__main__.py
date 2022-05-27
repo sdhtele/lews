@@ -173,7 +173,7 @@ help_string_telegraph = f'''<br>
 '''
 
 help = telegraph.create_page(
-        title='Mirror-Leech-Bot Help',
+        title='SX Bot Help',
         content=help_string_telegraph,
     )["path"]
 
@@ -240,7 +240,7 @@ botcmds = [
     ]
 
 def main():
-      bot.set_my_commands(botcmds)
+     bot.set_my_commands(botcmds)
     start_cleanup()
     if INCOMPLETE_TASK_NOTIFIER and DB_URI is not None:
         notifier_dict = DbManger().get_incomplete_tasks()
