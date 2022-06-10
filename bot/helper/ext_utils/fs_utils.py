@@ -237,6 +237,24 @@ def get_media_info(path):
         title = None
     return duration, artist, title
 
+def mediainfo(path, name):
+    try:
+        result = subprocess.check_output(["mediainfo", path]).decode('utf-8')
+        body_text = f"""
+    <img src='https://telegra.ph/file/4d13885ed03f17f323e0e.png' />
+    <pre>Filename: {name}</pre>
+    <pre>{result}</pre>
+    """
+        metadata = telegraph.create_page(
+            title=f'📄 {botname}_Mediainfo',
+            content=body_text,
+        )["path"]
+    except Exception as e:
+        LOGGER.error(str(e))
+        return None
+    link = f"https://telegra.ph/{metadata}"
+    return link
+
 def get_video_resolution(path):
     try:
         result = check_output(["ffprobe", "-hide_banner", "-loglevel", "error", "-select_streams", "v:0",
